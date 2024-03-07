@@ -6,7 +6,9 @@ import requests
 endpoint = "http://localhost:8000/api/"
 
 # get_response = requests.get(endpoint, json={'query':"hellow world"})
-get_response = requests.get(endpoint, params={'abc': 123 }, json={'query':"hellow world"})
+# get_response = requests.get(endpoint, params={'abc': 123 }, json={'query':"hellow world"})
+# get_response = requests.post(endpoint, json={'title':"Post_Req 3", 'content':"Post request is Sucessfull", 'price':1})
+get_response = requests.post(endpoint, json={'title':"Post_Req 3"})
 # get_response = requests.get(endpoint, data={'query':"hellow world"})
 # get_response = requests.get(endpoint)
 # print(get_response.headers)

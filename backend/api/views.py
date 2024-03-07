@@ -8,19 +8,28 @@ from products.serializers import ProductSerializers
 
 
 # Create your views here.
-@api_view(['GET'])
+# @api_view(['GET'])
+# def api_home(request, *args, **kwargs):
+
+#     instance = Product.objects.all().order_by("?").first()
+#     data = {}
+
+#     if instance:
+
+#         # data = model_to_dict(instance, fields=['id','title','sale_price'])
+#         data = ProductSerializers(instance).data
+#     return Response(data)
+
+@api_view(['POST'])
 def api_home(request, *args, **kwargs):
 
-    instance = Product.objects.all().order_by("?").first()
-    data = {}
-
-    if instance:
-
-        # data = model_to_dict(instance, fields=['id','title','sale_price'])
-        data = ProductSerializers(instance).data
-    return Response(data)
-
-
+    serializer = ProductSerializers(data=request.data)
+    if serializer.is_valid(raise_exception=True):
+        # instance = serializer.save()
+        print(serializer.data)
+        return Response(serializer.data)
+    
+    return Response({"invalid":"invalid Field"},status=400)
 
 
 
