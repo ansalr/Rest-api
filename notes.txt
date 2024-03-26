@@ -4,3 +4,10 @@ endpoint
 HTTP requests --> HTML
 REST API HTTP requests --> JSON 
 
+REST {Representational State Transfer}
+
+benifits:
+    simplle and standardize
+    scalable and stateless
+    high performance
+    

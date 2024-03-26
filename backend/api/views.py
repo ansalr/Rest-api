@@ -29,7 +29,7 @@ def api_home(request, *args, **kwargs):
         print(serializer.data)
         return Response(serializer.data)
     
-    return Response({"invalid":"invalid Field"},status=400)
+    return Response({"invalid":"invalid Data"},status=400)
 
 
 
